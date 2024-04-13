@@ -1,0 +1,120 @@
+<mvc:View controllerName="bks.controller.Home" xmlns="sap.m" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" xmlns:html="http://www.w3.org/1999/xhtml">
+    <Page title="{i18n>title}" class="backgroundView1" showHeader="false">
+        <content>
+            <!-- <tnt:ToolHeader class="toobarBack"> -->
+            <!-- <ImageContent src="../images/logo.png" press="onProfile" />
+                <ToolbarSpacer />
+                <ImageContent class="profile" src="../images/textImageBlack6.png" press="onProfile" />
+                <ToolbarSpacer />
+                <SearchField width="30%" class="backgroundInput" visible="true" search=".onSearchListOrder2" showSearchButton="true" id="IdSearchHome" />
+
+                <ToolbarSpacer />
+                <Button icon="sap-icon://person-placeholder" text="Sign In" type="Transparent" press="onHomeSignIn" />
+                <Button icon="sap-icon://create" text="Register" type="Transparent" press="onHomeRegister" />
+                <Button icon="sap-icon://cart" text="Cart" class="homeButtonToolbar" type="Transparent" press="onHomeCart" /> -->
+            <!-- </tnt:ToolHeader> -->
+
+
+            
+            <tnt:ToolHeader class="backgroundView1">
+                <ImageContent class="logo" src="../images/logo.png" press="onLogoClick" />
+                <ImageContent class="profile" src="../images/textImageBlack6.png" />
+
+                <ToolbarSpacer />
+                <!--<Text text="Profile"/>-->
+                <SearchField width="500px" class="outerBorder" visible="true" search=".onSearchListOrder2" showSearchButton="true" id="IdSearchHome" />
+                <Button icon="sap-icon://person-placeholder" text="Sign In" type="Transparent" press="onHomeCustomerSignIn" />
+                <Button icon="sap-icon://create" text="Register" type="Transparent" press="onHomeRegister" />
+                <Button icon="sap-icon://cart" text="Cart" class="homeButtonToolbar" type="Transparent" press="onHomeCart" />
+            </tnt:ToolHeader>
+
+            <SlideTile class="slideMargin" width="1500px" displayTime="5000">
+                <GenericTile backgroundImage="/../images/slide12.jpg" press="pressOnTileOne" width="1520px" />
+                <GenericTile backgroundImage="/../images/slide14.jpg" press="pressOnTileTwo" width="1520px" />
+                <GenericTile backgroundImage="/../images/slide13.jpg" press="pressOnTileThree" width="1520px" />
+                <GenericTile backgroundImage="/../images/slide15.jpg" press="pressOnTileFour" width="1520px" />
+            </SlideTile>
+            <!-- <SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" transitionTime="250" displayTime="2500">
+                <GenericTile
+                    backgroundImage="test-resources/sap/m/demokit/sample/SlideTile/images/NewsImage1.png"
+                    frameType="TwoByOne" press="pressOnTileOne">
+                    <TileContent footer="August 21, 2016">
+                        <NewsContent
+                            contentText="Wind Map: Monitoring Real-Time and Forecasted Wind Conditions across the Globe"
+                            subheader="Today, SAP News" />
+                    </TileContent>
+                </GenericTile>
+                <GenericTile
+                    backgroundImage="test-resources/sap/m/demokit/sample/SlideTile/images/NewsImage2.png"
+                    frameType="TwoByOne" state="Failed">
+                    <TileContent footer="August 21, 2016">
+                        <NewsContent
+                            contentText="SAP Unveils Powerful New Player Comparision Tool Exclusively on NFL.com"
+                            subheader="Today, SAP News" />
+                    </TileContent>
+                </GenericTile>
+            </SlideTile> -->
+
+            <VBox alignContent="Center" alignItems="Center" justifyContent="Center">
+                <Label text="Category" class="catagoryFont" />
+            </VBox>
+
+            <GenericTile backgroundImage="/../images/fashion.jpg" class="tileCatagory" header="Fashion" subheader="" press="onFashion" />
+
+            <GenericTile backgroundImage="/../images/appl2png.png" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Electronic" subheader="" press="onElectronics" />
+
+            <GenericTile backgroundImage="/../images/mobile.jpg" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Mobile" subheader="" mode="HeaderMode" press="press" />
+
+            <GenericTile backgroundImage="/../images/g2.png" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Grocery" subheader="" press="press" />
+
+            <GenericTile backgroundImage="/../images/Furniture.jpg" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Furniture" subheader="" press="press" />
+
+            <GenericTile backgroundImage="/../images/Beauty.jpg" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Beauty Product" subheader="" press="press" />
+
+            <GenericTile backgroundImage="/../images/tt2.jpg" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Toys" subheader="" mode="HeaderMode" press="press" />
+
+            <GenericTile backgroundImage="/../images/veg1.png" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Vegitable" subheader="" press="press" />
+
+            <VBox alignContent="Center" alignItems="Center" justifyContent="Center">
+                <Label text="Top offers on brands" class="brandFont" />
+            </VBox>
+
+            <VBox class="vBoxMargin" direction="Row">
+                <GenericTile backgroundImage="/../images/nike3.png" class="vBoxItemMargin" header="" subheader="" press="press" />
+
+                <GenericTile backgroundImage="/../images/zara2.png" class="vBoxItemMargin" header="" subheader="" mode="HeaderMode" press="press" />
+
+                <GenericTile backgroundImage="/../images/puma2.png" class="vBoxItemMargin" header="" subheader="" mode="HeaderMode" press="press" />
+
+                <GenericTile backgroundImage="/../images/reebok3.png" class="vBoxItemMargin" header="" subheader="" press="press" />
+            </VBox>
+
+            <VBox alignContent="Center" alignItems="Center" justifyContent="Center">
+                <Label text="Bank Offer" class="brandFont" />
+
+                <SlideTile class="bankOfferSlide" width="1100px" displayTime="5000">
+                    <GenericTile backgroundImage="/../images/bank2slide.jpg" press="pressOnTileOne" width="1100px" />
+                </SlideTile>
+            </VBox>
+
+            <VBox alignContent="Center" alignItems="Center" justifyContent="Center">
+                <Label text="Extra Benefits" class="brandFont" />
+            </VBox>
+
+            <SlideTile class="marginGif" width="1000px" displayTime="5000">
+                <GenericTile backgroundImage="/../images/slide1.gif" press="pressOnTileOne" width="1000px" />
+            </SlideTile>
+            <SlideTile class="slideMargin" width="460px" displayTime="5000">
+                <GenericTile backgroundImage="/../images/ss3.jpg" press="pressOnTileOne" width="500px" />
+            </SlideTile>
+        </content>
+        
+        <!-- <footer>
+            <Bar class="blackground">
+                <contentRight>
+                    <Text text="  Copyright © 2023 SAP SE. All rights reserved." />
+                </contentRight>
+            </Bar>
+        </footer> -->
+    </Page>
+</mvc:View>

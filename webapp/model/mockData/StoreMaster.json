@@ -1,0 +1,11 @@
+	{
+        "StoreMasters":
+                   [
+                    {"ID": "MM0688", "Name":"Shubham Mishra"}, {"ID": "MM0689", "Name":"Sourav Das"},
+	                {"ID": "MM0700", "Name":"Gokul Prakash"},  {"ID": "MM0708", "Name":"Amarjit Yamlem"}, 
+					{"ID": "MM0772", "Name":"Manish Kumar"}
+                    ],
+                
+        "CustomerData": 
+                   {"ID":"MM0001", "Name":"Jibin"}
+    }

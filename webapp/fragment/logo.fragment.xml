@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog id="IDLogoPopup"  class="logoPopup" showHeader="false">
+
+		<Bar>
+		
+				
+			<contentRight>
+				<Button icon="sap-icon://decline" press="onLogoClose" type="Reject" tooltip="onClose"/>
+			</contentRight>
+		</Bar>
+
+		
+			 <Image class="widthLogoFrag" src="/../images/logo.png" press="onProfile" />
+			
+		
+	
+	</Dialog>
+	
+</core:FragmentDefinition>

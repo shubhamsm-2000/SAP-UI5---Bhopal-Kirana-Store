@@ -1,0 +1,39 @@
+.FontMedium {
+    padding-left: 25px;
+    color: #000;
+    margin-top: 20px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.marginTop {
+    margin-top: 20px;
+}
+
+.outerBorder {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 0, 0);
+
+    /* border-top-style: ;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: groove;
+        background-color: #eee; */
+}
+
+.paddingSplit{
+    margin: 32px;
+    /* padding: 32px; */
+}
+
+.bold{
+    font-weight: bold;
+}
+
+/* Customer Product List Image */
+.imageDisplayBlock {
+    width: 62px;
+    height: 62px;
+	display: block;
+}

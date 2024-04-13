@@ -1,0 +1,240 @@
+{
+    "_version": "1.48.0",
+    "sap.app": {
+        "id": "bks",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.8.4",
+            "toolsId": "3ee82bd3-77b6-47f3-a3a9-13e7128d1fbe"
+        },
+        
+        
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZMM0688_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        
+        "config": {
+            "fullWidth": true
+        },
+
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.109.3",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "bks.i18n.i18n"
+                }
+            },
+            "mMainModel": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                },
+                {
+                    "uri": "css/StoreMaster.css"
+                }               
+            ],
+            "json": [
+                {
+                    "uri": "json/feed.json"
+                }
+            ],
+            "json": [
+                {
+                    "uri": "json/items.json"
+                }
+            ]
+            
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "type": "View",
+                "async": true,
+                "transition":"flip",
+                "viewType": "XML",
+                "path": "bks.view",
+                "controlId": "app",
+                "controlAggregation": "pages"
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "homeRoute",
+                    "target": "homeTarget"
+                },
+                {
+                    "pattern": "Login",
+                    "name": "loginRoute",
+                    "target": "loginTarget"
+                },
+                {
+                    "pattern": "StoreMasterHome",
+                    "name": "StoreMasterHomeRoute",
+                    "target": "StoreMasterHomeTarget"
+                },
+                {
+                    "pattern": "View1",
+                    "name": "view1Route",
+                    "target": "view1Target"
+                },
+                {
+                    "pattern": "AddStock",
+                    "name": "addStockRoute",
+                    "target": "addStockTarget"
+                },
+                {
+                    "pattern": "tclProject1",
+                    "name": "tclProject1Route",
+                    "target": "tclProject1Target"
+                },
+                {
+                    "pattern": "ProductShortage",
+                    "name": "ProductShortageRoute",
+                    "target": "ProductShortageTarget"
+                },
+                {
+                    "pattern": "AvailableProduct",
+                    "name": "AvailableProductRoute",
+                    "target": "AvailableProductTarget"
+                },
+                {
+                    "pattern": "Notification",
+                    "name": "notificationRoute",
+                    "target": "NotificationTarget"
+                },
+                {
+                    "pattern": "CustomerProduct/{PType}",
+                    "name": "CustomerProductRoute",
+                    "target": "CustomerProductTarget"
+                },
+                {
+                    "pattern": "CustomerHome/FASHION",
+                    "name": "CustomerHomeRoute",
+                    "target": "CustomerHomeTarget"
+                },
+                {
+                    "pattern": ":?query:",
+                    "name": "view1Target",
+                    "target": "view1Target"
+                }
+                
+            ],
+            "targets": {
+
+                "homeTarget": {
+                    "viewType": "XML",
+                    "viewName": "Home"
+                },
+
+                "loginTarget": {
+                    "viewType": "XML",
+                    "viewName": "Login"
+                },
+                "StoreMasterHomeTarget": {
+                    "viewType": "XML",
+                    "viewName": "StoreMaster"
+                },
+                "view1Target": {
+                    "viewType": "XML",
+                    "viewName": "View1"
+                },
+                "addStockTarget": {
+                    "viewType": "XML",
+                    "viewName": "AddStock"
+                },
+                "tclProject1Target": {
+                    "viewType": "XML",
+                    "viewName": "tclProject1"
+                },
+                "ProductShortageTarget": {
+                    "viewType": "XML",
+                    "viewName": "ProductShortage"
+                },
+                "AvailableProductTarget": {
+                    "viewType": "XML",
+                    "viewName": "AvailableProduct"
+                },
+                "NotificationTarget": {
+                    "viewType": "XML",
+                    "viewName": "Notification"
+                },
+                "CustomerProductTarget": {
+                    "viewType": "XML",
+                    "viewName": "customerProduct"
+                },
+                "CustomerHomeTarget": {
+                    "viewType": "XML",
+                    "viewName": "customerProduct"
+                }
+               
+            }
+        },
+        "rootView": {
+            "viewName": "bks.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    }
+}

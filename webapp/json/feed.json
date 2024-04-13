@@ -1,0 +1,92 @@
+{
+	"EntryCollection": [
+		{
+			"Author": "Bhopal City Store",
+			"AuthorPicUrl": "../images/logo.png",
+			"Type": "Request",
+			"Date": "March 03 2013",
+			"Actions": [
+				{
+					"Text": "Delete",
+					"Icon": "sap-icon://delete",
+					"Key": "delete"
+				},
+				{
+					"Text": "Share",
+					"Icon": "sap-icon://share-2",
+					"Key": "share"
+				},
+				{
+					"Text": "Edit",
+					"Icon": "sap-icon://edit",
+					"Key": "edit"
+				}
+			],
+			"Text": "Hi Jibin, We would like to inform you that, Our Company 'Bhopal City Store', is moving one step further and planning to open new store in next city Jamshedpur. So, in the matter of planning and brain Storming, we have meeting on 20th fabruary 2023. Thank uou "
+		},
+		{
+			"Author": "Suraj Prakash",
+			"AuthorPicUrl": "../images/suraj1.png",
+			"Type": "Reply",
+			"Date": "March 04 2013",
+			"Text": "<strong>DB City mall</strong> Hi Jibin, We have increased some of products price.  We are sending you new price list of product. <u><a href='https://www.google.com/imgres?imgurl=https%3A%2F%2Flh3.googleusercontent.com%2FxUwFiNOl8rz84bAx8Q7Y0-bBZ0V1YIiUeFwIdedEc3zWJnfeQ8O0YZAKY5DQgLkVPP1BN79j6UxZnvob72ztvsOqqmRF7ZW8LQjHgIMR_Zr3WgeqIHn2OpZ1NCFnEcG5fxmWza1n&imgrefurl=https%3A%2F%2Fwww.bussinesslegend.com%2F2021%2F12%2Fvestige-product-price-list-2022.html&tbnid=WMv2cAklpC8CsM&vet=10CAIQxiAoAGoXChMI6IORjZr8_AIVAAAAAB0AAAAAEBw..i&docid=hpc8mIERoR6bAM&w=1256&h=1600&itg=1&q=store%20product%20price%20list&ved=0CAIQxiAoAGoXChMI6IORjZr8_AIVAAAAAB0AAAAAEBw'>Here is our product list</a></u>"
+		},
+		{
+			"Author": "Bhopal City Store",
+			"AuthorPicUrl": "../images/logo.png",
+			"Type": "Information",
+			"Date": "March 05 2013",
+			"Text": "Hi Shubham, Your Bonus for this Year is deposited to your account. Thnak you for your all your hard work and trust on company.",
+			"Actions": [
+				{
+					"Text": "Delete",
+					"Icon": "sap-icon://delete",
+					"Key": "delete"
+				},
+				{
+					"Text": "Share",
+					"Icon": "sap-icon://share-2",
+					"Key": "share"
+				},
+				{
+					"Text": "Edit",
+					"Icon": "sap-icon://edit",
+					"Key": "edit"
+				}
+			]
+		},
+		{
+			"Author": "Sushant Rajan",
+			"AuthorPicUrl": "../images/sushant.png",
+			"Type": "Rejected",
+			"Date": "March 05 2013",
+			"Text": "<strong>Aashima Anupama Mall</strong> - Hi Jibin, We are sorry to inform you thant we cannot proceed your order, as we have already shortage of that product which you have order. I will inform you when product is available. I hope you will understand our problem Thank you.",
+			"Actions": [
+				{
+					"Text": "Delete",
+					"Icon": "sap-icon://delete",
+					"Key": "delete"
+				},
+				{
+					"Text": "Share",
+					"Icon": "sap-icon://share-2",
+					"Key": "share"
+				},
+				{
+					"Text": "Edit",
+					"Icon": "sap-icon://edit",
+					"Key": "edit"
+				}
+			]
+		},
+		{
+			"Author": "Suraj Prakash",
+			"AuthorPicUrl": "../images/suraj1.png",
+			"Type": "Approved",
+			"Date": "March 07 2013",
+			"Text": " <strong>DB City mall</strong> - Hellow, Jibin, we are happy to receive new order from your store. I would like to confirm that your order is <strong>confirmed</strong>. It will be delieved on <em>29th fabruary</em>. Thank you"
+		}
+	],
+
+	"StoreMasters":{"ID": "MM0688", "Name":"Shubham Mishra"}
+}

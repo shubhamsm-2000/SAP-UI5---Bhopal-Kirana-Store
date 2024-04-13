@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog id="IdOrderDetail">
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Title text="Order Detail"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<f:SimpleForm id="IdSeller" title="Seller Details" editable="true" layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12"
+			labelSpanM="12" labelSpanS="12" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2"
+			columnsL="2" columnsM="2" singleContainerFullSize="true">
+			<f:content>
+				<Label text="Order ID"/>
+				<Text id="IDorderIdFragRow" text="{mMainModel>Orderid}"/>
+				<Label text="Customer ID"/>
+				<!--<Input value="" id="IDcustomerIdFragRow" value="{mMainModel>/RowFragment/Pid}"></Input>-->
+				<Text id="IDPCidFragRow" text="{mMainModel>Cid}"/>
+				<Label text="Product ID"/>
+				<!--<Input id="IDproductIdFragRow" value="{mMainModel>/Pid}"/>-->
+				<Text id="IDPidFragRow" text="{mMainModel>Pid}"/>
+				<core:Title/>
+				<Label text="Product Name"/>
+				<!--<Input id="IDproductNameFragRow" value="{mMainModel>/Pname}"/>-->
+				<Text id="IDPnameFragRow" text="{mMainModel>Pname}"/>
+				<Label text="Product Type "/>
+				<Select id="IDProductTypeFragRow" items="{productModel>/productType}">
+					<core:Item key="{productModel>Id}" text="{productModel>Type}"/>
+				</Select>
+				<Label text="Price"/>
+				<Input id="IDPriceFragRow"/>
+				<core:Title/>
+				<Label text="Quantity"/>
+				<Input id="IDquantityFragRow"/>
+				<Label text="Total Amount"/>
+				<Input id="IDTotalAmount"/>
+				<Label text="Status"/>
+				<Input id="IDstatusFragRow"/>
+				<Label text="Order Date"/>
+				<core:Title/>
+				<DatePicker id="IDdatePickFragRow" change=".onFromDate" placeholder="DD-MM-YYYY" value="" valueFormat="yyyy-MM-dd"/>
+				<!--<Label></Label>-->
+				<Label></Label>
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</core:FragmentDefinition>

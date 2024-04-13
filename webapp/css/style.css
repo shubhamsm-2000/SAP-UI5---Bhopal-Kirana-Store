@@ -1,0 +1,159 @@
+.backgroundImage {
+    background-image: url("/../images/back1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    /* -webkit-background-size: cover; */
+    /*background-attachment: scroll;*/
+}
+
+.logoPopup{
+    width: fit-content;
+    height:fit-content;
+    margin: 0;
+    /* background-image: url("/../images/back1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.widthLogoFrag{
+    width: 400px;
+    height: 400px;
+}
+
+.slideMargin{
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.customBar{
+     height: 200px;
+    background-color: red;
+}
+.bar{
+    background-color: black;
+}
+.form{
+
+    margin: 200px 0px 0px 0px
+}
+.inputName{
+ padding-top: 5px;
+}
+.loginButton{
+    margin-left: 20px;
+}
+
+.radioGroup{
+  max-height: fit-content;
+}
+.radioPadding{
+    margin-left: 30px;
+}
+
+.searchMargin{
+    margin-left: 500px;
+}
+
+.marginGif{
+    margin-left: 25px;
+}
+
+.bankOfferSlide{
+    margin-left: 40px;
+
+}
+
+.tileCatagory{
+    margin-top: 7px;
+   margin-left: 30px;
+}
+
+.vBoxMargin{
+    margin-left: 150px;
+
+}
+
+.vBoxItemMargin{
+    width:200px;
+    margin-left: 100px;
+}
+
+
+.sapUiTinyMarginBegin{
+    -webkit-margin-start: 50px;
+}
+
+.backgroundView1 {
+    background-color: #ffffff;
+    width: 100% !important; /* Adjust the width as needed */
+    padding-left: 0 !important;
+    padding-right: 0 !important; 
+
+}
+
+.blackground {
+    background-color: #4a4a07;
+}
+
+.backgroundInput {
+    margin-left: 200px;
+    background-color: #ffffff;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-top-style: hidden;
+    border-bottom-style: hidden;
+}
+.logo{
+  width: 62px;
+  margin-left: 0px;
+  padding-left: 0px;
+  size: 10px; 
+  position:relative;
+   /* padding-left: 0px;
+   margin-left: 0px; */
+}
+
+.profile {
+    max-height: fit-content;
+    padding-left: 150px;
+    margin-bottom: 40px;
+    /* margin-right: 100px;
+    padding-right: 150px; */
+    /* margin-right: 50px; */
+
+    /* display: block;
+    position: relative;
+    right: 1;
+    bottom: 0;
+    max-height: 50px */
+   
+}
+
+.toobarBack {
+    background-color: #caca17;
+}
+
+.homeButtonToolbar {
+    padding-right: 40px;
+}
+
+.RegisterFont{
+    font-size: 15px;
+}
+
+.catagoryFont{
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    align-items: center;
+}
+
+.brandFont{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    align-items: center;
+}
+

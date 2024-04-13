@@ -1,0 +1,78 @@
+<mvc:View controllerName="bks.controller.Login" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" 
+xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form"
+xmlns:form="sap.ui.layout.form">
+    <Page title="{i18n>title}" showHeader="false" class="backgroundImage">
+        <content>
+
+            <Button text="" icon="sap-icon://nav-back" type="Transparent" press="onBack" />
+            <ImageContent class="logo" src="../images/logo.png" press="onLogoClick" />			
+            <!-- <tnt:ToolHeader>
+				<Button icon="sap-icon://menu2" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</Button>
+				<ToolbarSpacer/>
+				<Text text="Welcome! Please Fill Login Detail..."/>
+				<ToolbarSpacer/>
+				<Button text="Help" icon="sap-icon://sys-help" type="Transparent"/>
+			</tnt:ToolHeader> -->
+            <!--<Panel headerText="" class="sapUiResponsiveMargin"-->
+            <!--				width="40%">-->
+
+            <!-- <Panel> -->
+                <VBox class="form" justifyContent="Center" alignContent="Center" alignItems="Center" >
+                    <f:SimpleForm id="IdSelection1">
+                        <f:content>
+                            <!-- <FlexBox fitContainer="true" alignContent="Center" alignItems="Center" justifyContent="Center" backgroundDesign="Solid" direction="Column"> -->
+                            <!--<Label text="UserId " class="sapUiSmallMarginEnd"/>-->
+                            <Input class="" id="IDuserId" value="{/firstName}" placeholder="User Id" width="18rem" />
+                            <!--<Label text="Passward" class="sapUiSmallMarginEnd"/>-->
+                            <Input class="" id="IDpassward" placeholder="Passward" width="18rem" type="Password" change="onChange" />
+                            <Button class="" text="Login" press="onLogin" width="18rem" />
+                            <Button text="Change Passward" press="onPassChange" class="loginButton sapUiButtonLite" width="15rem" type="Transparent" />
+
+                            <RadioButtonGroup id="IdLoginType" columns="2" selectedIndex="0" class="radioGroup">
+                                <RadioButton  id="IdStoreMaster" text="Store Manager" />
+                                <RadioButton class="radioPadding" id="idCustomer" text="Customer" />                                
+                         </RadioButtonGroup>
+                         <CheckBox selected="{/enabled}"/>
+                        </f:content>
+                    </f:SimpleForm>
+                    <form:SimpleForm editable="true" layout="ColumnLayout">
+			<Label text="First Name"/>
+			<Input value="{/firstName}" valueLiveUpdate="true" width="200px" enabled="{/enabled}"/>
+			<Label text="Last Name"/>
+			<Input value="{/lastName}" valueLiveUpdate="true" width="200px" enabled="{/enabled}"/>
+			<Label text="Enabled"/>
+			<CheckBox selected="{/enabled}"/>
+		</form:SimpleForm>
+                    <!-- </FlexBox> -->
+                </VBox>
+            <!-- </Panel> -->
+            <!-- </VBox> -->
+        </content>
+
+        <customHeader>
+			<Bar class="bar">
+				<contentRight>
+					<Button id="back" text="Back To Home"  press="onBackToHome" />
+                    <Button id="Test" text="Go To Next"  press="onTesting" />
+				</contentRight>
+				<contentLeft>
+					<!-- <Image class="imghome" src="/../image/profile.jpg"/> -->
+                    <ImageContent  src="../images/logo.png" press="onProfile" />
+					<ImageContent class="profile" src="../images/textImageBlack6.png"/>
+				</contentLeft>
+			</Bar>
+		</customHeader>
+		
+        <!-- <footer>
+            <Bar>
+                <contentRight>
+                    <Text text="  Copyright © 2023 SAP SE. All rights reserved." />
+                </contentRight>
+            </Bar>
+        </footer> -->
+    </Page>
+</mvc:View>

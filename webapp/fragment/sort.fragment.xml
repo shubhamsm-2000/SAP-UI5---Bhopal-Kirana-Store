@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog confirm=".onSalesResultSort" id="IdSortDialog">
+		<sortItems>
+			<ViewSettingsItem text="Order Id" key="Orderid"/>
+			<ViewSettingsItem text="Product Id" key="Pid"/>
+			<ViewSettingsItem text="Price" key="Price"/>
+			<ViewSettingsItem text="Product Type" key="Ptype"/>
+			<ViewSettingsItem text="Amount" key="Amount"/>
+			<ViewSettingsItem text="Customer Id" key="Cid"/>
+			<ViewSettingsItem text="Order Date" key="Ordate"/>
+		</sortItems>
+		<!--<endButton>-->
+		<!--	<Button text="Close" press=".onClose"/>-->
+		<!--</endButton>-->
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

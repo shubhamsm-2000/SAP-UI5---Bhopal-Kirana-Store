@@ -1,0 +1,95 @@
+<mvc:View controllerName="bks.controller.StoreMaster" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" xmlns:html="http://www.w3.org/1999/xhtml">
+    <Page title="{i18n>title}" class="backgroundView1" showHeader="false">
+        <content>
+            <tnt:ToolHeader>
+                <Button text="" icon="sap-icon://nav-back" type="Transparent" press="onBack" />
+                <ImageContent class="logo" src="../images/logo.png" press="onLogoClick" />
+                <ImageContent class="profile" src="../images/textImageBlack6.png" />
+
+                <ToolbarSpacer />
+                <!--<Text text="Profile"/>-->
+                <ImageContent class=".profile" src="../images/Jibin2.png" press="onProfile" />
+                <Button text="Feed" icon="sap-icon://bell" type="Transparent" press="onNotification" />
+                <Button text="Home" icon="sap-icon://home" type="Transparent" press="onHome" />
+                <!-- <Button text="Profile" icon="sap-icon://account" type="Transparent" press="onProfile" /> -->
+                    <!-- <Text text="Hello! Store Master, Shubham" /> -->
+                 <Button text="Sign Out" icon="sap-icon://log" type="Transparent" press="onSignOut" />
+                
+            </tnt:ToolHeader>
+
+        
+
+            <VBox alignContent="Center" alignItems="Start" justifyContent="Center">
+                <Label text="Product Detail" class="FontMedium" />
+            </VBox>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Product Availability" subheader="Check Product in Store" press="onProductAvail">
+                <TileContent>
+                    <ImageContent src="sap-icon://product" />
+                </TileContent>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Product Shortage" subheader="Check Product Shortage in Store" press="onProductShort">
+                <TileContent>
+                    <ImageContent src="sap-icon://home-share" />
+                </TileContent>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Add Product" subheader="Give New Order To Supplier" press="onNewOrder">
+                <TileContent>
+                    <ImageContent src="sap-icon://add-product" />
+                </TileContent>
+            </GenericTile>
+
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Ordered History" subheader="Check Order History" press="onOrderHis">
+                <TileContent>
+                    <ImageContent src="sap-icon://home-share" />
+                </TileContent>
+            </GenericTile>
+
+            <VBox class="marginTop" alignContent="Center" alignItems="Start" justifyContent="Center">
+                <Label text="Customer Detail" class="FontMedium" />
+            </VBox>
+
+            <VBox class="" direction="Row">
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Customers Details" subheader="Normal Customer" press="press">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Prime Member Customers" subheader="Paid Customers" press="press">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+            </VBox>
+
+            <VBox class="marginTop" alignContent="Center" alignItems="Start" justifyContent="Center">
+                <Label text="Supplier" class="FontMedium" />
+            </VBox>
+
+            <VBox class="" direction="Row">
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Supplier Details" subheader="Subtitle" press="press">
+                    <TileContent>
+                        <ImageContent src="sap-icon://supplier" />
+                    </TileContent>
+                </GenericTile>
+
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Add Stock" subheader="Subtitle" press="press">
+                    <TileContent>
+                        <ImageContent src="sap-icon://home-share" />
+                    </TileContent>
+                </GenericTile>
+            </VBox>
+        </content>
+       
+        <!-- <footer>
+            <Bar class="blackground">
+                <contentRight>
+                    <Text text="  Copyright © 2023 SAP SE. All rights reserved." />
+                </contentRight>
+            </Bar>
+        </footer> -->
+    </Page>
+</mvc:View>

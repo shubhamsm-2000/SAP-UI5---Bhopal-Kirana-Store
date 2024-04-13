@@ -1,0 +1,112 @@
+<mvc:View controllerName="bks.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt">
+	<App>
+	<pages>
+	<Page title="{i18n>title}" class="backgroundView1" showHeader="false">
+		<content>
+			<tnt:ToolHeader>
+				<Button text="" icon="sap-icon://nav-back" type="Transparent" press="onBack" />
+                <ImageContent class="logo" src="../images/logo.png" press="onLogoClick" />
+                <ImageContent class="profile" src="../images/textImageBlack6.png" />
+
+                <ToolbarSpacer />
+                <!--<Text text="Profile"/>-->
+                <ImageContent class=".profile" src="../images/Jibin2.png" press="onProfile" />
+                <Button text="Home" icon="sap-icon://home" type="Transparent" press="onHome" />
+                <!-- <Button text="Profile" icon="sap-icon://account" type="Transparent" press="onProfile" /> -->
+                    <!-- <Text text="Hello! Store Master, Shubham" /> -->
+                 <Button text="Sign Out" icon="sap-icon://log" type="Transparent" press="onSignOut" />
+                
+            </tnt:ToolHeader>
+			<f:SimpleForm id="IdSelection1" editable="true" layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12"
+				labelSpanS="12" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="3"
+				singleContainerFullSize="true">
+				<f:content>
+					<core:Title/>
+					<!--<Input value="{HouseNumber}">-->
+					<!--	<layoutData>-->
+					<!--		<l:GridData span="XL2 L2 M3 S3"/>-->
+					<!--	</layoutData>-->
+					<!--</Input>-->
+					<Label text="Enter OrderID"/>
+					<Input id="orderId" class="backgroundInput"/>
+					<Label text="Select Product Type "/>
+					<Select id="IdProductType" items="{productModel>/productType}">
+						<core:Item key="{productModel>Id}" text="{productModel>Type}"/>
+					</Select>
+					<core:Title/>
+					<Label text="Enter Customer ID"/>
+					<Input value="" id="customerId" class="backgroundInput"></Input>
+					<Label text="Select Order Date"/>
+					<DatePicker id="datePick" change=".onFromDate" placeholder="DD-MM-YYYY" value="" valueFormat="yyyy-MM-dd" class="backgroundInput"/>
+					<core:Title/>
+					<Label text=""/>
+					<Button text="Clear" press="onClear"/>
+					<!-- <Button tooltip="Sort" icon="sap-icon://sort" press="on" visible="true" width="5em"/> -->
+					<Label></Label>
+					<Button text="Get Specific Order" press="onSingle"/>
+					<Button text="Get All Order" press="onAll"/>
+					<Label></Label>
+				</f:content>
+			</f:SimpleForm>
+			<OverflowToolbar>
+				<Button tooltip="Export as Excel" icon="sap-icon://excel-attachment" press=".onExport" visible="true"/>
+				<Button tooltip="Sort" icon="sap-icon://sort" press=".onSort" visible="true" width="5em"/>
+				<SearchField width="15%" visible="true" search=".onSearchListOrder" showSearchButton="true" id="IdhideableInput"/>
+				<Button text="Update" press=".onUpdate"/>
+			</OverflowToolbar>
+			<ScrollContainer height="30rem" horizontal='true' vertical='true' width="100%" focusable="true">
+				<Table id="IdTable" alternateRowColors="true" mode="MultiSelect" selectionChange="onCheck" items="{ path: '/oData' }">
+						<columns>
+							<Column width="8em">
+								<Label text="Order Id"/>
+							</Column>
+							<Column width="8em">
+								<Label text="Product Id"/>
+							</Column>
+							<Column width="15em">
+								<Label text="Product Name"/>
+							</Column>
+							<Column width="6em">
+								<Label text="Price"/>
+							</Column>
+							<Column width="5em">
+								<Label text="Quantity"/>
+							</Column>
+							<Column width="10em">
+								<Label text="Product Type"/>
+							</Column>
+							<Column width="6em">
+								<Label text="Amount"/>
+							</Column>
+							<Column width="8em">
+								<Label text="Customer Id"/>
+							</Column>
+							<Column width="8em">
+								<Label text="Status"/>
+							</Column>
+							<Column width="10em">
+								<Label text="Order Date"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle" type="Navigation" press="onRowSelected">
+								<Text text="{Orderid}"/>
+								<Text text="{Pid}"/>
+								<Text text="{Pname}"/>
+								<Text text="{Price}"/>
+								<Text text="{Quantity}"/>
+								<Text text="{Ptype}"/>
+								<Text text="{Amount}"/>
+								<Text text="{Cid}"/>
+								<Text text="{Status}"/>
+								<Text text="{Ordate}"/>
+							</ColumnListItem>
+						</items>
+					</Table>
+			</ScrollContainer>
+		</content>
+	</Page>
+	</pages>
+	</App>
+</mvc:View>

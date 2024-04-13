@@ -1,0 +1,141 @@
+<mvc:View controllerName="bks.controller.AddStock" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:tnt="sap.tnt">
+    <App>
+        <pages>
+            <Page title="{i18n>title}" showHeader="false">
+                <content>
+                    <tnt:ToolHeader>
+                        <Button text="" icon="sap-icon://nav-back" type="Transparent" press="onBack" />
+                        <ImageContent class="logo" src="../images/logo.png" press="onLogoClick" />
+                        <ImageContent class="profile" src="../images/textImageBlack6.png" />
+
+                        <ToolbarSpacer />
+                        <!--<Text text="Profile"/>-->
+                        <ImageContent class=".profile" src="../images/Jibin2.png" press="onProfile" />
+                        <Button text="Home" icon="sap-icon://home" type="Transparent" press="onHome" />
+                        <!-- <Button text="Profile" icon="sap-icon://account" type="Transparent" press="onProfile" /> -->
+                        <!-- <Text text="Hello! Store Master, Shubham" /> -->
+                        <Button text="Sign Out" icon="sap-icon://log" type="Transparent" press="onSignOut" />
+                    </tnt:ToolHeader>
+                    <l:ResponsiveSplitter defaultPane="default">
+                        <l:PaneContainer orientation="Vertical">
+                            <l:SplitPane requiredParentWidth="100">
+                                <Page title="{i18n>Supplier}">
+                                    <f:SimpleForm
+                                        id="SimpleForm"
+                                        layout="ResponsiveGridLayout"
+                                        class="padneg"
+                                        editable="true"
+                                        labelSpanXL="3"
+                                        labelSpanL="4"
+                                        labelSpanM="5"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="1"
+                                        emptySpanL="1"
+                                        emptySpanM="1"
+                                        emptySpanS="1"
+                                        columnsXL="2"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"
+                                    >
+                                        <f:content>
+                                            <core:Title />
+
+                                            <Label text="Supplier No" labelFor="Supplier Code" required="true" />
+                                            <ComboBox class="outerBorder" id="IDSupplier" change="onGetSuppDetail" items="{supplierModel>/SupplierName}">
+                                                <items>
+                                                    <core:Item key="{supplierModel>Id}" text="{supplierModel>Name}" />
+                                                </items>
+                                            </ComboBox>
+
+                                            <Label text="Plant" labelFor="Plant" required="true" />
+                                            <Input class="outerBorder" id="IDPlant" value="{mMainModel>/supplietInfo/Plant}" editable="false" liveChange="PlantChange" />
+
+                                            <Label text="Contact No" required="true" labelFor="Supplier" />
+                                            <Input class="outerBorder" id="IDSupplierName" value="{mMainModel>/supplietInfo/ContactNo}" editable="false" liveChange="PlantChange" />
+
+                                            <core:Title />
+
+                                            <Label text="Supplier Location" required="true" />
+                                            <Input class="outerBorder" id="IDSupplierLocation" value="{mMainModel>/supplietInfo/Location}" editable="false" liveChange="PlantChange" />
+
+                                            <Label required="true" text="Country" />
+                                            <Input class="outerBorder" value="{mMainModel>/supplietInfo/Country}" editable="false" />
+
+                                            <Label required="true" text="Email" />
+                                            <Input class="outerBorder" value="{mMainModel>/supplietInfo/Email}" editable="false" />
+                                        </f:content>
+                                    </f:SimpleForm>
+                                </Page>
+                            </l:SplitPane>
+
+                            <l:SplitPane class="paddingSplit" requiredParentWidth="70">
+                                <Page title="{i18n>Product}">
+                                    <OverflowToolbar visible="true">
+                                        <Button icon="sap-icon://add" text="Add Product" press="onAddRow" />
+                                        <Button icon="sap-icon://delete" text="Remove" press="onDelete" />
+
+                                        <ToolbarSpacer />
+                                        <Button text="Send To Supplier" press="onSendOrder" />
+                                        <Button text="Clear All" press="onClear" />
+                                    </OverflowToolbar>
+
+                                    <ScrollContainer height="26rem" id="ScrollActivity" horizontal='false' vertical='true' width="100%" focusable="true">
+                                        <Table id="IDAddProdTable" noDataText="Add Product" mode="MultiSelect" selectionChange="Select" width="100%" growing="true" 
+                                                    growingScrollToLoad="true" growingThreshold="15" items="{mMainModel>/Items}">
+                                            <headerToolbar />
+                                            <columns>
+                                                <Column width="2em" hAlign="Center">
+                                                    <Label text="SNo" textAlign="Center" design="Bold" />
+                                                </Column>
+                                                <Column width="15em" hAlign="Center">
+                                                    <Label text="Product Name" textAlign="Center" design="Bold" />
+                                                </Column>
+                                                <Column width="10em" hAlign="Center">
+                                                    <Label text="Product Type" textAlign="Center" design="Bold" />
+                                                </Column>
+                                                <Column width="8em" hAlign="Center">
+                                                    <Label text="Quantity" textAlign="Center" design="Bold" />
+                                                </Column>
+                                                <Column width="5em" hAlign="Center">
+                                                    <Label text="Unit" textAlign="Center" design="Bold" />
+                                                </Column>
+                                                <Column width="8em" hAlign="Center">
+                                                    <Label required="true" text="Requirement Date" textAlign="Center" design="Bold" />
+                                                </Column>
+                                                <Column width="1em" hAlign="Center" />
+                                            </columns>
+                                            <items>
+                                                <ColumnListItem>
+                                                    <cells>
+                                                        <Text text="{mMainModel>SNo}"  textAlign="Begin" />
+                                                        <Input id="IDProductName" change="MaterialUnit" filterSuggests="false" type="Text" showSuggestion="true" showValueHelp="true" 
+                                                                suggestionItems="{mMainModel>/oAllProduct/Pname}"   valueHelpRequest=".onProductF4" enabled="true" value="{mMainModel>Pname}">
+                                                            <suggestionItems>
+                                                                <core:ListItem key="{mMainModel>Pname}" text="{mMainModel>Pname}" additionalText="{mMainModel>Pname}" />
+                                                            </suggestionItems>
+                                                        </Input>
+                                                        <ComboBox class="outerBorder" id="IDProductType" change="" items="{productModel>/productType}">
+                                                            <items>
+                                                                <core:Item key="{productModel>Id}" text="{productModel>Type}" />
+                                                            </items>
+                                                        </ComboBox>
+                                                        <Input id="IDQuantity" value="{mMainModel>Quantity}" />
+                                                        <Input id="IDUnit" value="{mMainModel>Unit}" />
+                                                        <DatePicker id="IDReqDate" value="{mMainModel>ReqDate}" required="true" valueFormat="MMM dd, yyyy" placeholder=" "  />
+                                                    </cells>
+                                                </ColumnListItem>
+                                            </items>
+                                        </Table>
+                                    </ScrollContainer>
+                                </Page>
+                            </l:SplitPane>
+                        </l:PaneContainer>
+                    </l:ResponsiveSplitter>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

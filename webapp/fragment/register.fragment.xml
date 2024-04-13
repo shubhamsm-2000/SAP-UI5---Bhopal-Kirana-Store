@@ -1,0 +1,67 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    <Dialog id="IdRegisterUser">
+        <customHeader>
+            <Bar>
+                <contentMiddle>
+                    <Title text="Register:" class="RegisterFont" />
+                </contentMiddle>
+                <contentRight>
+                    <Button icon="sap-icon://save" press="onRegisterSave" type="Accept" tooltip="Save" />
+                    <Button icon="sap-icon://decline" press="onRegisterClose" type="Reject" tooltip="Close" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+        <f:SimpleForm
+            id="IdSeller"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="12"
+            labelSpanL="12"
+            labelSpanM="12"
+            labelSpanS="12"
+            adjustLabelSpan="true"
+            emptySpanXL="0"
+            emptySpanL="0"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="2"
+            columnsL="2"
+            columnsM="2"
+            singleContainerFullSize="true"
+        >
+            <f:content>
+                <Text text="Please Fill The Details:" />
+                <Label text="Full Name" />
+                <Input id="IDNameFragReg" />
+
+                <Label text="Date Of Birth" />
+                <DatePicker id="IDBirthFragReg" change=".onFromDate" placeholder="DD-MM-YYYY" value="" valueFormat="yyyy-MM-dd" />
+
+                <Label text="Mobile Number" />
+                <Input id="IDNumberFragReg" type="Number" maxLength="10"/>
+
+                <Label text="Select Your City:" />
+                <Select id="IdProductType" items="{cityModel>/city}">
+                    <core:Item key="{cityModel>Id}" text="{cityModel>Type}" />
+                </Select>
+
+                <core:Title />
+
+                <Label text="Passward" />
+                <Input id="IDPasswardFragReg" type="Password" placeholder="Enter password" />
+
+                <Label text="Email ID" />
+                <Input id="IDEmailIdFragReg" type="Email" placeholder="Abcd@gmail.com" />
+
+                <Label text="Gender:" />
+                <RadioButtonGroup id="IdGender" columns="2" selectedIndex="0" class="sapUiMediumMarginBottom">
+                    <RadioButton id="idMale" text="Male" />
+                    <RadioButton id="IdFemale" text="Female" />
+                </RadioButtonGroup>
+
+                <!--<Label></Label>-->
+                <Label />
+            </f:content>
+        </f:SimpleForm>
+    </Dialog>
+</core:FragmentDefinition>

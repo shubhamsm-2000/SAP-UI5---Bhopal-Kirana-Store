@@ -1,0 +1,45 @@
+<mvc:View
+	controllerName="bks.controller.notification"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+    xmlns:tnt="sap.tnt">
+	<l:VerticalLayout
+		class="sapUiContentPadding"
+		width="100%">
+        <tnt:ToolHeader>
+           
+                <Button text="" icon="sap-icon://nav-back" type="Transparent" press="onBack" />
+                <ImageContent class="logo" src="../images/logo.png" press="onLogoClick" />
+                <ImageContent class="profile" src="../images/textImageBlack6.png" />
+
+                <ToolbarSpacer />
+                <!--<Text text="Profile"/>-->
+                <ImageContent class=".profile" src="../images/myProfile.png" press="onProfile" />
+                <Button text="Home" icon="sap-icon://home" type="Transparent" press="onHome" />
+                <!-- <Button text="Profile" icon="sap-icon://account" type="Transparent" press="onProfile" /> -->
+                    <!-- <Text text="Hello! Store Master, Shubham" /> -->
+                 <Button text="Sign Out" icon="sap-icon://log" type="Transparent" press="onSignOut" />
+                
+            </tnt:ToolHeader>
+		<l:content>
+			<List
+				headerText="Notifications"
+				items="{/EntryCollection}" >
+				<FeedListItem
+					sender="{Author}"
+					icon="{AuthorPicUrl}"
+					senderPress="onPress"
+					iconPress="onPress"
+					iconDensityAware="false"
+					info="{Type}"
+					timestamp="{Date}"
+					text="{Text}"
+					convertLinksToAnchorTags="All"
+					actions="{path: 'Actions', templateShareable: false}">
+					<FeedListItemAction text="{Text}" icon="{Icon}" key="{Key}" press="onActionPressed" />
+				</FeedListItem>
+			</List>
+		</l:content>
+	</l:VerticalLayout>
+</mvc:View>

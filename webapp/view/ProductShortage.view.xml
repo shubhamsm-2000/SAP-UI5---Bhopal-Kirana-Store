@@ -1,0 +1,130 @@
+<mvc:View controllerName="bks.controller.ProductShortage" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt"
+	xmlns:vl="sap.ui.core.ValueState">
+	<App>
+	<pages>
+	<Page title="{i18n>title}" class="backgroundView1" showHeader="false">
+		<content>
+			<tnt:ToolHeader>
+				<Button text="" icon="sap-icon://nav-back" type="Transparent" press="onBack" />
+                <!-- <ImageContent class="logo" src="../images/logo.png" press="onLogoClick" /> -->
+                <ImageContent class="profile" src="../images/textImageBlack6.png" />
+
+                <ToolbarSpacer />
+                <!--<Text text="Profile"/>-->
+                <ImageContent class=".profile" src="../images/Jibin2.png" press="onProfile" />
+                <Button text="Home" icon="sap-icon://home" type="Transparent" press="onHome" />
+                <!-- <Button text="Profile" icon="sap-icon://account" type="Transparent" press="onProfile" /> -->
+                    <!-- <Text text="Hello! Store Master, Shubham" /> -->
+                 <Button text="Sign Out" icon="sap-icon://log" type="Transparent" press="onSignOut" />
+                
+            </tnt:ToolHeader>
+			
+			<f:SimpleForm id="IdSelection1" editable="true" layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12"
+				labelSpanS="12" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="true">
+				<f:content>
+					<SearchField class="outerBorder " width="90%" visible="true" search=".onSearchListOrder" showSearchButton="true" id="IdhideableInput"/>
+					<Select id="IdProductType2" class="outerBorder " items="{productModel>/productType}">
+						<core:Item key="{productModel>Id}" text="{productModel>Type}"/>
+					</Select>	
+					<Button  text="Check" width="15%" type="Transparent" press="onProductCheck" />	
+					
+				</f:content>
+			</f:SimpleForm>
+			<OverflowToolbar>
+				<Button tooltip="Export as Excel" icon="sap-icon://excel-attachment" press=".onExport" visible="true"/>
+				<Button tooltip="Sort" icon="sap-icon://sort" press=".onSort" visible="true" width="5em"/>
+				<Button text="Update" press=".onUpdate"/>
+			</OverflowToolbar>
+			<ScrollContainer height="30rem" horizontal='true' vertical='true' width="100%" focusable="true">
+
+
+				<List id="IdTable" items="{ path: '/productShortage' }" width="100%">    
+					<items>
+						<!-- <StandardListItem id="IdPname" 
+						  title="{Pname}" 
+						  description="{Pid}" 
+						  icon="" iconInset="false"
+						  highlight="Information" info="Shortage" infoState="Error"
+						  infoStateInverted="true">
+						</StandardListItem> -->
+
+						<ObjectListItem id="IdPname" 
+						  title="{Pname}" 
+
+						  number="{
+							parts:[{path:'ShortageQty'},{path:'Priority'}],
+							type: 'sap.ui.model.type.Currency',
+							formatOptions: {showMeasure: false}
+						}"					
+						numberUnit="{Priority}"
+						>
+						<firstStatus>
+							<ObjectStatus class="bold"
+								text="{Status}"								
+								state="{=${Status} === 'SHORT' ? 'Error': 'Success'}" 
+								icon= "{=${Status} === 'SHORT' ? 'sap-icon://error' : 'sap-icon://sys-enter-2'}" 
+								active="true"
+		 						inverted="true"
+								/>
+						</firstStatus>	
+						<ObjectAttribute text="Product Id: {Pid}"/>					
+                        <ObjectAttribute text="Curr. Price: {CurrentPrice}"/>
+						<ObjectAttribute text="Product Type : {Ptype}" />
+						 
+						
+					</ObjectListItem>
+					</items>
+				</List>
+				<!-- <Table id="IdTable" alternateRowColors="true" mode="MultiSelect" selectionChange="onCheck" items="{ path: '/productShortage' }">
+						<columns>
+							
+							<Column width="8em">
+								<Label text="Product Id"/>
+							</Column>
+							<Column width="15em">
+								<Label text="Product Name"/>
+							</Column>
+							<Column width="10em">
+								<Label text="Product Type"/>
+							</Column>
+							<Column width="6em">
+								<Label text="Current Price"/>
+							</Column>						
+							<Column width="15em">
+								<Label text="Shortage Quantity"/>
+							</Column>
+							<Column width="8em">
+								<Label text="Available"/>
+							</Column>
+							<Column width="8em">
+								<Label text="Product Requirement"/>
+							</Column>
+							<Column width="10em">
+								<Label text="Priority"/>
+							</Column>
+							<Column width="10em">
+								<Label text="Status"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle" type="Navigation" press="onRowSelected">
+								<Text text="{Pid}"/>
+								<Text text="{Pname}"/>
+								<Text text="{Ptype}"/>
+								<Text text="{CurrentPrice}"/>
+								<Text text="{AvailQuantity}"/>
+								<Text text="{ShortageQty}"/>
+								<Text text="{Requirement}"/>
+								<Text text="{Priority}"/>
+								<Text text="{Status}"/>								
+							</ColumnListItem>
+						</items>
+					</Table> -->
+			</ScrollContainer>
+		</content>
+	</Page>
+	</pages>
+	</App>
+</mvc:View>
